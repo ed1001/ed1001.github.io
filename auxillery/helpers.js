@@ -78,17 +78,18 @@ function menuNav(current) {
 function incrementScore(size) {
   switch (size) {
     case asteroidSizes.large:
-      game.score += 3;
+      game.score += largeScore * gameModes[game.mode];
       break;
     case asteroidSizes.medium:
-      game.score += 5;
+      game.score += mediumScore * gameModes[game.mode];
       break;
     case asteroidSizes.small:
-      game.score += 7;
+      game.score += smallScore * gameModes[game.mode];
       break;
     default:
       break;
   }
+  if (game.score > hiScore) hiScore = game.score;
 }
 
 function playSound(file) {

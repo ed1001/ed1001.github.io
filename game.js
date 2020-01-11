@@ -27,8 +27,6 @@ class Game {
       playSound("../sounds/game_over.mp3");
     }
 
-    if (this.score > hiScore) hiScore = this.score;
-
     drawText("20px Georgia", `Score: ${this.score}`, 50, 50, false);
     drawText("20px Georgia", `Hi-Score: ${hiScore}`, 1000, 50, false);
 

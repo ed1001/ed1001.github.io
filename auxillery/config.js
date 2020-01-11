@@ -7,6 +7,9 @@ const gameColours = Object.freeze({
   2: "rgba(255, 255, 0, 1)"
 });
 let menuLevel = 0;
+const largeScore = 3;
+const mediumScore = 5;
+const smallScore = 7;
 
 // ship
 const shipSize = 20;
