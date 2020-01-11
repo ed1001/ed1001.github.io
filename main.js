@@ -9,6 +9,9 @@ let gameColour = gameColours[0];
 const restartTimerSecs = 3;
 
 let game = new Game(lives, restartTimerSecs, 0, 0);
+alert(
+  "Use left and right arrow keys to turn, up to thrust and space to shoot.\nMay the odds be forever in your favour."
+);
 window.requestAnimationFrame(update);
 
 function update() {
