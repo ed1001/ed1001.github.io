@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap");
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto Slab", serif;
+  user-select: none;
+}
+
+.box {
+  position: relative;
+  height: 30vw;
+  width: 60vw;
+  min-width: 750px;
+  min-height: 375px;
+  background-color: rgba(230, 230, 230, 0.7);
+  margin-top: 5vw;
+}
+
+.upper-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 12%;
+  left: 12.5%;
+  height: 20%;
+  width: 75%;
+}
+
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 10%;
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  width: 80%;
+  background-color: rgba(210, 210, 210, 1);
+  cursor: pointer;
+  font-size: calc(3px + 1vw);
+}
+
+.edit-active {
+  color: rgba(228, 36, 36, 0.8);
+}
+
+.transport-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 68%;
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+.transport {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78%;
+  width: 28%;
+  background-color: rgba(210, 210, 210, 1);
+  cursor: pointer;
+  font-size: calc(14px + 1.3vw);
+}
+
+.transport-symbol {
+  transition: all 0.12s;
+}
+
+.symbol-container:hover .symbol {
+  transform: scale(1.1);
+}
+
+.symbol-container:active .symbol {
+  color: rgba(228, 36, 36, 0.8);
+  transform: scale(0.95);
+}
+
+.bpm-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+#bpm-desc {
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  font-size: calc(1px + 1vw);
+}
+
+#bpm-text {
+  display: flex;
+  justify-content: center;
+  font-size: calc(20px + 2vw);
+  cursor: all-scroll;
+  width: 50%;
+}
+
+#arrows {
+  font-size: calc(1px + 1vw);
+  margin-left: 7%;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+
+.arrow:active {
+  color: rgba(228, 36, 36, 0.8);
+  transform: scale(0.95);
+}
+
+.grid-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  top: 35%;
+  left: 12.5%;
+  height: 50%;
+  width: 75%;
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+.grid-line {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(210, 210, 210, 0.9);
+}
+
+.grid-line:nth-child(-n + 9) {
+  border-bottom: 1px solid rgb(92, 92, 92);
+}
+
+.instr-name {
+  width: 12%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(6px + 0.3vw);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.instr-name-active {
+  animation: note-play 0.4s;
+}
+
+@keyframes note-play {
+  from {
+    color: white;
+    border-radius: 20px;
+    background-color: rgba(228, 36, 36, 0.8);
+  }
+
+  to {
+    color: black;
+    border-radius: 0px;
+    background-color: rgba(228, 36, 36, 0);
+  }
+}
+
+.notes {
+  width: 88%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.note {
+  width: 4%;
+  height: 70%;
+  border-radius: 5px;
+  background-color: rgba(200, 200, 200, 0.9);
+  transition: background-color 0.2s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.note-active {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.note-playing {
+  background-color: rgba(100, 255, 149, 0.8);
+}
+
+.beat-container {
+  position: absolute;
+  display: flex;
+  right: 0;
+  width: 88%;
+  height: 100%;
+  z-index: 1;
+}
+
+.beat:nth-child(-n + 3) {
+  border-right: 1px solid rgb(92, 92, 92);
+}
+
+.beat {
+  height: 100%;
+  width: 25%;
+}
+
+.subdivision {
+  height: 100%;
+  width: 6.25%;
+  transition: background-color 0.1s;
+}
+
+.subdiv-active {
+  background-color: rgba(188, 188, 188, 0.8);
+}
+
+.mouse-1 {
+  cursor: url(./images/pencil.png) 0 32, auto;
+}
+
+.mouse-0 {
+  cursor: url(./images/eraser.png) 0 32, auto;
+}
